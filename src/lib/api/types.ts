@@ -16,7 +16,14 @@ export type SensorType =
     | "length"
     | "mass"
     | "volume"
-    | "humidity";
+    | "humidity"
+    | "light"
+    | "co2"
+    | "occupancy"
+    | "motion"
+    | "pm10"
+    | "pm25"
+    | "pm1";
 
 export type SensorValue =
     | { type: "temperature"; celsius: number }
@@ -24,7 +31,14 @@ export type SensorValue =
     | { type: "length"; meters: number }
     | { type: "mass"; kilograms: number }
     | { type: "volume"; cubic_meters: number }
-    | { type: "humidity"; percent: number };
+    | { type: "humidity"; percent: number }
+    | { type: "light"; lux: number }
+    | { type: "co2"; ppm: number }
+    | { type: "occupancy"; occupied: boolean }
+    | { type: "motion"; detected: boolean }
+    | { type: "pm10"; micrograms_per_m3: number }
+    | { type: "pm25"; micrograms_per_m3: number }
+    | { type: "pm1"; micrograms_per_m3: number };
 
 export type BatchOrder = "newest" | "oldest";
 

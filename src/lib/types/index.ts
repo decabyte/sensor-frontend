@@ -54,6 +54,20 @@ export function getSensorValueDisplay(value: SensorValue): {
             return { value: value.cubic_meters, unit: "m³" };
         case "humidity":
             return { value: value.percent, unit: "%" };
+        case "light":
+            return { value: value.lux, unit: "lux" };
+        case "co2":
+            return { value: value.ppm, unit: "ppm" };
+        case "occupancy":
+            return { value: value.occupied ? 1 : 0, unit: "" };
+        case "motion":
+            return { value: value.detected ? 1 : 0, unit: "" };
+        case "pm10":
+            return { value: value.micrograms_per_m3, unit: "µg/m³" };
+        case "pm25":
+            return { value: value.micrograms_per_m3, unit: "µg/m³" };
+        case "pm1":
+            return { value: value.micrograms_per_m3, unit: "µg/m³" };
     }
 }
 
@@ -82,6 +96,20 @@ export function getUnitForSensorType(type: SensorType): string {
             return "m³";
         case "humidity":
             return "%";
+        case "light":
+            return "lux";
+        case "co2":
+            return "ppm";
+        case "occupancy":
+            return "";
+        case "motion":
+            return "";
+        case "pm10":
+            return "µg/m³";
+        case "pm25":
+            return "µg/m³";
+        case "pm1":
+            return "µg/m³";
     }
 }
 
@@ -117,6 +145,27 @@ export function batchToSensorData(
                 break;
             case "humidity":
                 sensorValue = { type: "humidity", percent: value };
+                break;
+            case "light":
+                sensorValue = { type: "light", lux: value };
+                break;
+            case "co2":
+                sensorValue = { type: "co2", ppm: value };
+                break;
+            case "occupancy":
+                sensorValue = { type: "occupancy", occupied: value >= 0.5 };
+                break;
+            case "motion":
+                sensorValue = { type: "motion", detected: value >= 0.5 };
+                break;
+            case "pm10":
+                sensorValue = { type: "pm10", micrograms_per_m3: value };
+                break;
+            case "pm25":
+                sensorValue = { type: "pm25", micrograms_per_m3: value };
+                break;
+            case "pm1":
+                sensorValue = { type: "pm1", micrograms_per_m3: value };
                 break;
         }
 

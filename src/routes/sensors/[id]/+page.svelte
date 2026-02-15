@@ -41,6 +41,13 @@
 				case 'length': return h.value.meters;
 				case 'mass': return h.value.kilograms;
 				case 'volume': return h.value.cubic_meters;
+				case 'light': return h.value.lux;
+				case 'co2': return h.value.ppm;
+				case 'occupancy': return h.value.occupied ? 1 : 0;
+				case 'motion': return h.value.detected ? 1 : 0;
+				case 'pm10': return h.value.micrograms_per_m3;
+				case 'pm25': return h.value.micrograms_per_m3;
+				case 'pm1': return h.value.micrograms_per_m3;
 			}
 		});
 
@@ -119,6 +126,13 @@
 					case 'length': value = h.value.meters; break;
 					case 'mass': value = h.value.kilograms; break;
 					case 'volume': value = h.value.cubic_meters; break;
+					case 'light': value = h.value.lux; break;
+					case 'co2': value = h.value.ppm; break;
+					case 'occupancy': value = h.value.occupied ? 1 : 0; break;
+					case 'motion': value = h.value.detected ? 1 : 0; break;
+					case 'pm10': value = h.value.micrograms_per_m3; break;
+					case 'pm25': value = h.value.micrograms_per_m3; break;
+					case 'pm1': value = h.value.micrograms_per_m3; break;
 				}
 
 				return {

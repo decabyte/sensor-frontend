@@ -12,6 +12,10 @@ import {
     Box,
     Droplets,
     Activity,
+    Sun,
+    Cloud,
+    Users,
+    Wind,
 } from "lucide-svelte";
 import type { SensorType } from "../api/types";
 
@@ -28,6 +32,13 @@ export const sensorTypeIcons: Record<SensorType, IconComponent> = {
     mass: Weight,
     volume: Box,
     humidity: Droplets,
+    light: Sun,
+    co2: Cloud,
+    occupancy: Users,
+    motion: Activity,
+    pm10: Wind,
+    pm25: Wind,
+    pm1: Wind,
 };
 
 /**
@@ -40,6 +51,13 @@ export const sensorTypeColors: Record<SensorType, string> = {
     mass: "text-yellow-500 dark:text-yellow-400",
     volume: "text-purple-500 dark:text-purple-400",
     humidity: "text-cyan-500 dark:text-cyan-400",
+    light: "text-amber-500 dark:text-amber-400",
+    co2: "text-gray-500 dark:text-gray-400",
+    occupancy: "text-indigo-500 dark:text-indigo-400",
+    motion: "text-green-500 dark:text-green-400",
+    pm10: "text-orange-500 dark:text-orange-400",
+    pm25: "text-pink-500 dark:text-pink-400",
+    pm1: "text-sky-500 dark:text-sky-400",
 };
 
 /**
@@ -52,6 +70,13 @@ export const sensorTypeBgColors: Record<SensorType, string> = {
     mass: "bg-yellow-100 dark:bg-yellow-900/30",
     volume: "bg-purple-100 dark:bg-purple-900/30",
     humidity: "bg-cyan-100 dark:bg-cyan-900/30",
+    light: "bg-amber-100 dark:bg-amber-900/30",
+    co2: "bg-gray-100 dark:bg-gray-900/30",
+    occupancy: "bg-indigo-100 dark:bg-indigo-900/30",
+    motion: "bg-green-100 dark:bg-green-900/30",
+    pm10: "bg-orange-100 dark:bg-orange-900/30",
+    pm25: "bg-pink-100 dark:bg-pink-900/30",
+    pm1: "bg-sky-100 dark:bg-sky-900/30",
 };
 
 /**
