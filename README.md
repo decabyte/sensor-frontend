@@ -33,9 +33,6 @@ A modern web interface for the Sensor Platform, built with Svelte 5, TypeScript,
 ### Installation
 
 ```bash
-# From the sensor-platform-rs directory
-cd sensor-frontend
-
 # Install dependencies
 bun install
 
@@ -291,6 +288,6 @@ Requires ES2020+ and native ES modules support.
 
 ## Related Documentation
 
-- [OpenRPC Specification](../docs/openrpc.json)
-- [Architecture Documentation](../docs/architecture.md)
-- [Sensor Domain Types](../sensor-domain/src/entities.rs)
+- [OpenRPC Specification](../sensor-platform-rs/docs/openrpc.json)
+- [Architecture Documentation](../sensor-platform-rs/docs/architecture.md)
+- [Sensor Domain Types](../sensor-platform-rs/sensor-domain/src/entities.rs)
