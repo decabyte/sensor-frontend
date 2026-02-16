@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { sensorsById, loadSensors, refreshAllSensors, toggleAutoRefresh, setRefreshInterval, REFRESH_INTERVALS, autoRefreshEnabled, refreshInterval } from '$lib/stores/sensors';
 	import { getSensorIcon, getSensorColor, getSensorBgColor, formatSensorType } from '$lib/utils/icons';
-	import { getSensorValueDisplay } from '$lib/types';
+	import { getSensorValueDisplay, getUnitForSensorType } from '$lib/types';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Sidebar from '$lib/components/layout/Sidebar.svelte';
 	import { Radio, RefreshCw, Activity } from 'lucide-svelte';
@@ -146,7 +146,8 @@
 								</div>
 								<div class="flex items-center gap-4">
 									{#if sensor.latestData}
-										{@const { value: displayValue, unit } = getSensorValueDisplay(sensor.latestData.value)}
+										{@const { value: displayValue } = getSensorValueDisplay(sensor.latestData.value)}
+										{@const unit = getUnitForSensorType(sensor.info.sensor_type)}
 										<span class="text-sm font-medium text-gray-700 dark:text-gray-300">
 											{displayValue.toFixed(1)} {unit}
 										</span>

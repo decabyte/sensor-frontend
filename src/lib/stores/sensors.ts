@@ -118,6 +118,7 @@ export async function refreshSensor(sensorId: string): Promise<void> {
 
     try {
         const data = await getData(sensorId, token);
+        console.debug("Fetched data for sensor: ", data);
 
         sensorsById.update((map) => {
             const sensor = map.get(sensorId);
@@ -218,6 +219,8 @@ export async function refreshAllSensors(): Promise<void> {
             for (let i = 0; i < sensorIds.length; i++) {
                 const sensorId = sensorIds[i];
                 const data = dataList[i];
+                // console.debug("Fetched data for sensor: ", data);
+
                 const sensor = newMap.get(sensorId);
                 if (sensor) {
                     newMap.set(sensorId, {

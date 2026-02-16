@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { sensorsById, loadSensors, refreshAllSensors, toggleAutoRefresh, setRefreshInterval, sensorsLoading, REFRESH_INTERVALS, autoRefreshEnabled, refreshInterval } from '$lib/stores/sensors';
 	import { getSensorIcon, getSensorColor, getSensorBgColor, formatSensorType } from '$lib/utils/icons';
-	import { getSensorValueDisplay } from '$lib/types';
+	import { getSensorValueDisplay, getUnitForSensorType } from '$lib/types';
 	import { resolve } from '$app/paths';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Sidebar from '$lib/components/layout/Sidebar.svelte';
@@ -141,10 +141,7 @@
 										{/if}
 									</span>
 									<span class="text-sm text-gray-500 dark:text-gray-400">
-										{#if latestValue}
-											{@const display = getSensorValueDisplay(latestValue.value)}
-											{display.unit}
-										{/if}
+										{getUnitForSensorType(sensor.info.sensor_type)}
 									</span>
 								</div>
 
