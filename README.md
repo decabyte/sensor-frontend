@@ -286,6 +286,10 @@ const chart = createChart(container, {
 
 Requires ES2020+ and native ES modules support.
 
+## Proposed Improvements:
+
+- [ ]: Add support for faster liting and formatting with oxc / oxlint / oxfmt: https://github.com/oxc-project/oxc
+
 ## Related Documentation
 
 - [OpenRPC Specification](../sensor-platform-rs/docs/openrpc.json)
